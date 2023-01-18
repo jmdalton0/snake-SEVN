@@ -1,0 +1,36 @@
+:root {
+  --black: #000;
+  --black-light: #181818;
+  --grey: #222;
+  --grey-light: #333;
+  --primary: #41b883;
+  --primary-dark: #34495e;
+  --secondary: #FF87FF;
+  --food: #F78D0C;
+  --desktop-width: 85rem;
+  --mobile-width: 96vw;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  font-weight: normal;
+  border-width: 0;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--primary);
+  background: var(--black-light);
+  line-height: 1.6;
+  font-family: "Silkscreen", sans-serif;
+  font-size: 1vmin;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}

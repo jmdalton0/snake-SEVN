@@ -1,0 +1,21 @@
+.link:hover {
+    opacity: 0.8;
+}
+
+.btn {
+    font-size: 4rem;
+    background-color: transparent;
+    color: var(--primary);
+    transition: all 0.1s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    text-shadow: 0 0 10px var(--primary);
+}
+
+@media (min-width: 1024px) {
+    .btn {
+        font-size: 2rem;
+    }
+}

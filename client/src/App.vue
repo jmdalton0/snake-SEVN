@@ -9,7 +9,7 @@
       href="https://github.com/jmdalton0/snake-vue"
       target="_blank"
       class="link"
-      ><img src="./assets/GitHub_Logo_White.png" alt="GitHub Logo">
+      ><img src="./assets/GitHub_Logo_White.png" alt="GitHub Logo" class="logo">
     </a>
   </footer>
 </template>
@@ -28,11 +28,17 @@ export default {
 footer {
     display: flex;
     justify-content: space-between;
-    width: var(--desktop-width);
+    width: var(--dim);
     margin: 1rem auto;
 }
 
 .logo {
-  height: 4rem;
+  height: 2rem;
+}
+
+@media (max-width: 1024px) {
+  footer {
+    width: var(--dim);
+  }
 }
 </style>

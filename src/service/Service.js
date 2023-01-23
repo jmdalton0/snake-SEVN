@@ -18,7 +18,7 @@ export default class ScoresService {
         try {
             body = JSON.parse(body).score;
             score = Score.parse(body);
-            success = await controller.addScore(score);
+            const success = await controller.addScore(score);
             if (success) {
                 res.json({score: score});
             } else {

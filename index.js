@@ -13,12 +13,6 @@ const client_dir = path.join(__dirname, './src/client/public');
 
 const app = express();
 
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", process.env.ORIGINS);
-    res.header("Access-Control-Allow-Headers", process.env.HEADERS);
-    next();
-});
-
 app.use('/', express.static(client_dir));
 
 app.get('/scores', (req, res) => {

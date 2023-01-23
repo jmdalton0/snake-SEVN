@@ -2,7 +2,10 @@
 
 echo 'SNAKE';
 
-echo 'Building client...';
+npm install;
+
 cd src/client;
 npm run build;
-echo 'done';
+cd ../../;
+
+npm run start;

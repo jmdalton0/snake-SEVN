@@ -5,7 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "bash start.sh",
+    "start": "node index.js",
+    "serve": "bash serve.sh",
     "dev": "nodemon index"
   },
   "author": "jmdalton0",

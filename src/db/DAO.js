@@ -11,6 +11,7 @@ export default class DAO {
                 database: process.env.DB_NAME,
             });
         } catch (e) {
+            console.log(e);
             return null;
         }
     }
@@ -25,39 +26,8 @@ export default class DAO {
             }
             return null;
         } catch (e) {
+            console.log(e);
             return null;
-        }
-    }
-
-    async createDatabase() {
-        try {
-            const con = await mysql.createConnection({
-                host: process.env.DB_HOST,
-                user: process.env.DB_USER,
-                password: process.env.DB_PASS,
-            });
-            const sql = `CREATE DATABASE IF NOT EXISTS snake;`;
-            await con.execute(sql);
-            con.end();
-            return true;
-        } catch (e) {
-            return false;
-        }
-    }
-
-    async dropDatabase() {
-        try {
-            const con = await mysql.createConnection({
-                host: process.env.DB_HOST,
-                user: process.env.DB_USER,
-                password: process.env.DB_PASS,
-            });
-            const sql = `DROP DATABASE IF EXISTS snake;`;
-            await con.execute(sql);
-            con.end();
-            return true;
-        } catch (e) {
-            return false;
         }
     }
 }

@@ -16,7 +16,7 @@ const app = express();
 app.use('/', express.static(client_dir));
 
 app.get('/scores', (req, res) => {
-    console.log('/scores -', res);
+    console.log('/scores');
     Service.getScores(res);
 });
 
@@ -28,7 +28,7 @@ app.post('/score', (req, res) => {
         body.push(d);
     }).on('end', () => {
         body = Buffer.concat(body).toString();
-        console.log('/score -', res);
+        console.log('/score');
         Service.addScore(res, body);
     });
 });

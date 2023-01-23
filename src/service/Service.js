@@ -18,15 +18,15 @@ export default class ScoresService {
         try {
             body = JSON.parse(body).score;
             score = Score.parse(body);
-            await controller.addScore(score);
-            if (score) {
-                res.json({score: score});
-            } else {
-                res.sendStatus(500);
-            }
         } catch (e) {
             res.sendStatus(400);
         }
-        return false;
+
+        await controller.addScore(score);
+        if (score) {
+            res.json({score: score});
+        } else {
+            res.sendStatus(500);
+        }
     }
 }

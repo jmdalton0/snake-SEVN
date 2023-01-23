@@ -2,6 +2,11 @@ import DAO from './DAO.js';
 import Score from "../model/Score.js";
 
 export default class ScoreDAO extends DAO {
+    constructor() {
+        super();
+        this.createTable();
+    }
+
     async createTable() {
         const sql = `
             CREATE TABLE IF NOT EXISTS scores (
@@ -10,14 +15,6 @@ export default class ScoreDAO extends DAO {
             score INT NOT NULL
             );
         `;
-        if (await this.execute(sql)) {
-            return true;
-        }
-        return false;
-    }
-
-    async dropTable() {
-        const sql = `DROP TABLE IF EXISTS scores;`;
         if (await this.execute(sql)) {
             return true;
         }

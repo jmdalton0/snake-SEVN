@@ -33,20 +33,30 @@ export default class ScoreDAO extends DAO {
     }
 
     async readScore(id) {
-        const sql = `SELECT * FROM scores WHERE id = ${id};`;
-        const [res] = await this.execute(sql);
-        const score = Score.parse(res[0]);
-        return score;
+        try {
+            const sql = `SELECT * FROM scores WHERE id = ${id};`;
+            const [res] = await this.execute(sql);
+            const score = Score.parse(res[0]);
+            return score;
+        } catch (e) {
+            console.log(e);
+            return null;
+        }
     }
 
     async readScores() {
-        const sql = `SELECT * FROM scores;`;
-        const [res] = await this.execute(sql);
-        let scores = [];
-        res.forEach(row => {
-            scores.push(Score.parse(row));
-        });
-        return scores;
+        try {
+            const sql = `SELECT * FROM scores;`;
+            const [res] = await this.execute(sql);
+            let scores = [];
+            res.forEach(row => {
+                scores.push(Score.parse(row));
+            });
+            return scores;
+        } catch (e) {
+            console.log(e);
+            return null;
+        }
     }
 
     async deleteScore(id) {

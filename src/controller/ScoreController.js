@@ -9,24 +9,34 @@ export default class ScoreController {
     }
 
     async getScores() {
-        await this.#preserveNumScores();
-        return await this.dao.readScores();
+        try {
+            await this.#preserveNumScores();
+            return await this.dao.readScores();
+        } catch (e) {
+            console.log(e);
+            return null;
+        }
     }
 
     async addScore(score) {
-        await this.#preserveNumScores();
-        let success = false;
-        for (let i = 0; i < this.#MAX; i++) {
-            const cur = await this.dao.readScore(i);
+        try {
+            await this.#preserveNumScores();
+            let success = false;
+            for (let i = 0; i < this.#MAX; i++) {
+                const cur = await this.dao.readScore(i);
 
-            if (score.score >= cur.score) {
-                score.setId(i);
-                success = await this.dao.createScore(score);
-                score = cur;
+                if (score.score >= cur.score) {
+                    score.setId(i);
+                    success = await this.dao.createScore(score);
+                    score = cur;
+                }
             }
+            await this.#preserveNumScores();
+            return success;
+        } catch (e) {
+            console.log(e);
+            return false;
         }
-        await this.#preserveNumScores();
-        return success;
     }
 
     async #preserveNumScores() {

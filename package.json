@@ -6,7 +6,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "serve": "bash serve.sh",
     "dev": "nodemon index"
   },
   "author": "jmdalton0",

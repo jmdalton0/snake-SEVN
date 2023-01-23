@@ -4,9 +4,7 @@ export default class Proxy {
 
     static async getScores() {
         try {
-            let res = await axios.get(
-                import.meta.env.VITE_BASE_URL + '/scores'
-            );
+            let res = await axios.get('/scores');
             return res.data.scores;
         } catch (e) {
             console.log(e);
@@ -16,12 +14,9 @@ export default class Proxy {
 
     static async addScore(score) {
         try {
-            let res = await axios.post(
-                import.meta.env.VITE_BASE_URL + '/score',
-                {
-                    score: score
-                }
-            );
+            let res = await axios.post('/score', {
+                score: score
+            });
             return res.data.score;
         } catch (e) {
             console.log(e);

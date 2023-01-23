@@ -5,36 +5,44 @@
     >
         <div class="score">
             <h2>Game Over</h2>
-            <h3>Your Score:</h3>
-            <h3 class="score-total">{{ score }}</h3>
-        </div>
+            <h3>
+                <span>Your Score: </span>
+                <span class="score-total">{{ score }}</span>
+            </h3>
+
+            <Scores
+                :newScore="score"
+            />
+       </div>
     </Screen>
 </template>
 
 <script>
-import Screen from './Screen.vue';
+import Screen from '../Screen.vue';
+import Scores from './Scores.vue';
+
 export default {
     name: 'ScoreComponent',
     components: {
         Screen,
+        Scores,
     },
     props: {
         score: Number,
-    }
+    },
 }
 </script>
 
-<style>
+<style scoped>
 .score {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
+    flex: 1;
+    width: 100%;
 }
 
 .score-total {
     color: var(--secondary);
-    text-shadow: 0 0 24px var(--secondary);
+    text-shadow: 0 0 4px var(--secondary);
 }
 </style>

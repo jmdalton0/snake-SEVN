@@ -4,9 +4,8 @@
   </header>
   <Console/>
   <footer>
-    <img src="./assets/logo.svg" alt="Vue Logo" class="logo">
     <a
-      href="https://github.com/jmdalton0/snake-vue"
+      href="https://github.com/jmdalton0/snake-sevn"
       target="_blank"
       class="link"
       ><img src="./assets/GitHub_Logo_White.png" alt="GitHub Logo" class="logo">
@@ -27,13 +26,13 @@ export default {
 <style scoped>
 footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: var(--dim);
     margin: 1rem auto;
 }
 
 .logo {
-  height: 2rem;
+  height: 3rem;
 }
 
 @media (max-width: 1024px) {

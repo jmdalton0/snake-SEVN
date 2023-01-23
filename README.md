@@ -2,4 +2,4 @@
 
 ## Play the classic arcade game in your browser.
 
-### Built with MongoDB, Express, React, and Node.
+### Built with MySQL, Express, Vue, and Node.

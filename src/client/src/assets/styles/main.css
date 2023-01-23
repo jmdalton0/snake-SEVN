@@ -12,11 +12,15 @@ h1 {
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 8rem;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 4rem;
+}
+
+h4 {
+  font-size: 2.5rem;
 }
 
 p {
@@ -27,14 +31,5 @@ p {
   body {
     justify-content: center;
     align-items: flex-start;
-    font-size: 2vmin;
-  }
-
-  h2 {
-    font-size: 2rem;
-  }
-
-  h3 {
-    font-size: 1.5rem;
   }
 }

@@ -3,7 +3,7 @@
 }
 
 .btn {
-    font-size: 3rem;
+    font-size: 4rem;
     background-color: transparent;
     color: var(--primary);
     transition: all 0.1s ease;
@@ -12,10 +12,4 @@
 
 .btn:hover {
     text-shadow: 0 0 10px var(--primary);
-}
-
-@media (max-width: 1024px) {
-    .btn {
-        font-size: 2rem;
-    }
 }

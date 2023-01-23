@@ -28,7 +28,7 @@
 import Start from './screens/Start.vue';
 import Controls from './screens/Controls.vue';
 import Game from './game/Game.vue';
-import Score from './screens/Score.vue';
+import Score from './screens/score/Score.vue';
 
 export default {
     name: 'ConsoleComponent',
@@ -47,7 +47,6 @@ export default {
     },
     methods: {
         next() {
-            console.log(this.screen);
             if (this.screen === 'start') {
                 this.screen = 'controls';
             } else if (this.screen === 'controls') {
@@ -78,7 +77,7 @@ main {
     width: var(--dim);
     height: var(--dim);
     margin: 1rem auto;
-    padding: 2rem;
+    padding: 4rem;
     background-color: var(--grey);
     border: 7px solid var(--grey-light);
     border-radius: 40px;
@@ -101,6 +100,7 @@ main {
 
 @media (max-width: 1024px) {
     main {
+        margin-top: 4rem;
         padding: 10px;
     }
 

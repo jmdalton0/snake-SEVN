@@ -30,10 +30,6 @@ section {
     text-align: center;
     width: 100%;
     height: 100%;
-    padding: 4rem 0;
-}
-
-.screen-btn {
-    margin-top: 2rem;
+    padding: 8rem 4rem;
 }
 </style>

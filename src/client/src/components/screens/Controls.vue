@@ -38,7 +38,7 @@ export default {
 }
 
 .control {
-    font-size: 3rem;
+    font-size: 8rem;
     margin: 0 1rem;
 }
 
@@ -56,7 +56,7 @@ export default {
 
 @media (max-width: 1024px) {
     .control {
-        font-size: 2rem;
+        font-size: 8rem;
     }
 
     .key-control {

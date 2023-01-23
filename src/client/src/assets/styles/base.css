@@ -23,12 +23,15 @@
   border-width: 0;
 }
 
+html {
+  font-size: 1vmin;
+}
+
 body {
   min-height: 100vh;
   color: var(--primary);
   background: var(--black-light);
   font-family: "Silkscreen", sans-serif;
-  font-size: 1vmin;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

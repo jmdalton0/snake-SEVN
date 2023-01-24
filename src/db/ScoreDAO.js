@@ -2,10 +2,6 @@ import DAO from './DAO.js';
 import Score from "../model/Score.js";
 
 export default class ScoreDAO extends DAO {
-    constructor() {
-        super();
-    }
-
     async createTable() {
         const sql = `
             CREATE TABLE IF NOT EXISTS scores (
@@ -21,7 +17,7 @@ export default class ScoreDAO extends DAO {
     }
 
     async createScore(score) {
-        this.createTable();
+        await this.createTable();
         const sql = `
             REPLACE INTO scores(id, name, score)
             VALUES(${score.id}, "${score.name}", ${score.score});
@@ -33,7 +29,7 @@ export default class ScoreDAO extends DAO {
     }
 
     async readScore(id) {
-        this.createTable();
+        await this.createTable();
         try {
             const sql = `SELECT * FROM scores WHERE id = ${id};`;
             const [res] = await this.execute(sql);
@@ -46,7 +42,7 @@ export default class ScoreDAO extends DAO {
     }
 
     async readScores() {
-        this.createTable();
+        await this.createTable();
         try {
             const sql = `SELECT * FROM scores;`;
             const [res] = await this.execute(sql);
@@ -62,7 +58,7 @@ export default class ScoreDAO extends DAO {
     }
 
     async deleteScore(id) {
-        this.createTable();
+        await this.createTable();
         const sql = `
             DELETE FROM scores
             WHERE id = ${id}

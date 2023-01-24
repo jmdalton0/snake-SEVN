@@ -41,23 +41,18 @@ export default class ScoreController {
 
     async #preserveNumScores() {
         const scores = await this.dao.readScores();
-        if (scores.length < this.#MAX) {
-            await this.#padScores(scores);
-        }
-        if (scores.length > this.#MAX) {
-            await this.#pareScores(scores);
-        }
-    }
-
-    async #padScores(scores) {
-        for (let i = scores.length; i < this.#MAX; i++) {
-            await this.dao.createScore(new Score(i, '', 0));
-        }
-    }
-
-    async #pareScores(scores) {
-        for (let i = this.#MAX; i < scores.length; i++) {
-            await this.dao.deleteScore(scores[i].getId());
+        const greaterLength = Math.max(this.#MAX, scores.length);
+        for (let i = 0; i < greaterLength; i++) {
+            if (!scores[i]) {
+                await this.dao.createScore(new Score(i, '', 0));
+            }
+            else if (scores[i].getId() !== i) {
+                await this.dao.deleteScore(scores[i].getId());
+                await this.dao.createScore(new Score(i, '', 0));
+            }
+            else if (i > this.#MAX - 1) {
+                await this.dao.deleteScore(scores[i].getId());
+            }
         }
     }
 }

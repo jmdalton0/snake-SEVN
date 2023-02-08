@@ -235,7 +235,7 @@ export default {
         });
         this.ticker = setInterval(() => {
             this.tick();
-        }, 150);
+        }, 140);
     },
 }
 </script>

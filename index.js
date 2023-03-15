@@ -16,7 +16,6 @@ const app = express();
 app.use('/', express.static(client_dir));
 
 app.get('/scores', (req, res) => {
-    console.log('/scores');
     Service.getScores(res);
 });
 
